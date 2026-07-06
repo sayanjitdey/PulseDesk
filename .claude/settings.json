@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find apps *)",
+      "Bash(find apps/server -maxdepth 2)",
+      "Bash(git mv *)",
+      "Bash(cd \"c:\\\\Users\\\\deysa\\\\Documents\\\\Codebase\\\\PulseDesk\\\\PulseDesk\" && mv apps/server/src/package.json apps/server/package.json && find apps/server -maxdepth 1 && cat apps/server/src/tsconfig.json 2>/dev/null | head -20)",
+      "Bash(npm install *)",
+      "Bash(npm ls *)",
+      "Bash(npx tsc *)",
+      "PowerShell($env:DATABASE_URL = \"postgresql://postgres:postgres@localhost:5432/pulsedesk\"; npm run migrate)",
+      "PowerShell($env:DATABASE_URL = \"postgresql://postgres:postgres@localhost:5432/pulsedesk\"; npm run migrate --workspace=apps/server)",
+      "Bash(mv apps/server/migrations/1700000000000_initial-schema.js apps/server/migrations/1700000000000_initial-schema.cjs)",
+      "Bash(grep -rln \"pga\\\\$\" node_modules/node-pg-migrate/dist/)",
+      "Bash(where psql *)",
+      "Read(//c/Program Files/PostgreSQL/**)",
+      "Bash(docker exec *)",
+      "Bash(git status *)",
+      "Bash(git check-ignore *)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\deysa\\Documents\\Codebase\\PulseDesk\\PulseDesk\\apps\\server\\src",
+      "C:\\Users\\deysa\\Documents\\Codebase\\PulseDesk\\PulseDesk\\apps\\server\\migrations"
+    ]
+  }
+}
