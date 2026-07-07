@@ -1,4 +1,4 @@
-// apps/server/src/index.ts
+// apps/server/src/index.ts  — add routes (replace existing index.ts)
 import 'dotenv/config';
 import express from 'express';
 import { createServer } from 'http';
@@ -10,6 +10,7 @@ import { logger } from './lib/logger.js';
 import { db } from './lib/db.js';
 import { redis } from './lib/redis.js';
 import { errorHandler } from './middleware/errorHandler.js';
+import { authRoutes } from './modules/auth/auth.routes.js';
 
 const app  = express();
 const http = createServer(app);
@@ -24,10 +25,13 @@ app.get('/health', async (_req, res) => {
     await db.query('SELECT 1');
     await redis.ping();
     res.json({ status: 'ok', uptime: process.uptime() });
-  } catch (err) {
+  } catch {
     res.status(503).json({ status: 'error' });
   }
 });
+
+// Routes
+app.use('/api/auth', authRoutes);
 
 app.use(errorHandler);
 
@@ -36,10 +40,5 @@ http.listen(env.PORT, () => {
 });
 
 process.on('SIGTERM', async () => {
-  logger.info('SIGTERM — shutting down');
-  http.close(async () => {
-    await db.end();
-    await redis.quit();
-    process.exit(0);
-  });
+  http.close(async () => { await db.end(); await redis.quit(); process.exit(0); });
 });
