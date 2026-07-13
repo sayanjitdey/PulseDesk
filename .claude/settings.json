@@ -16,7 +16,11 @@
       "Read(//c/Program Files/PostgreSQL/**)",
       "Bash(docker exec *)",
       "Bash(git status *)",
-      "Bash(git check-ignore *)"
+      "Bash(git check-ignore *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(npm uninstall *)",
+      "Read(//c/Users/deysa/Documents/Codebase/**)",
+      "Bash(npm run *)"
     ],
     "additionalDirectories": [
       "c:\\Users\\deysa\\Documents\\Codebase\\PulseDesk\\PulseDesk\\apps\\server\\src",

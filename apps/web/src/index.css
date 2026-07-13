@@ -1,0 +1,11 @@
+/* apps/web/src/index.css */
+@import "tailwindcss";
+
+/* Your custom base styles below */
+@layer base {
+  body {
+    color: #111827;
+    background-color: #f9fafb;
+    -webkit-font-smoothing: antialiased;
+  }
+}
