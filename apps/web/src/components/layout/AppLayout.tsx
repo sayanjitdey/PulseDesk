@@ -3,7 +3,7 @@ import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '@/stores/auth.store';
 import { disconnectSocket } from '@/lib/socket';
 import {
-  LayoutDashboard, Ticket, Settings, LogOut, ChevronDown,
+  LayoutDashboard, Ticket, Settings, LogOut,
 } from 'lucide-react';
 import { clsx } from 'clsx';
 
